@@ -5025,7 +5025,7 @@ ul.wp-block-latest-posts li:last-child {
   text-transform: uppercase;
 }
 .main-menu a:before {
-  content: "";
+  /* content: ""; */
   position: relative;
   height: 6px;
   width: 6px;
