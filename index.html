@@ -510,11 +510,53 @@
                 transform: translatex(-100%);
             }
         }
+
+
+
+        body {
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 7));
+            }
+        }
+
+        .slider {
+            height: 140px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider .slide-track {
+            animation: scroll 30s linear infinite;
+            display: flex;
+            width: calc(110px* 14);
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        .slider .slide {
+            /* height: 100px; */
+            width: 250px;
+        }
     </style>
 
 
     <div class="container-fluid p-0">
-        <div class="marquee-wrap marquee">
+        <!-- <div class="marquee-wrap marquee">
             <div class="marquee__group marquee-content">
                 <div class="marquee-item m-item">
                     <img src="https://folks-production.vercel.app/img/brand-logo/Brandent.png" alt="folks_production">
@@ -547,42 +589,52 @@
                         alt="folks_production">
                 </div>
 
-                <!--  -->
 
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/Brandent.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/Granmade.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/Kaanch.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/Manav_rachna.png"
-                        alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/HalwaiPop.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/up_to_trends.png"
-                        alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/Kanpeki.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/sports.png" alt="folks_production">
-                </div>
-                <div class="marquee-item m-item">
-                    <img src="https://folks-production.vercel.app/img/brand-logo/law_ministry.png"
-                        alt="folks_production">
-                </div>
+            </div>
+        </div> -->
 
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/Brandent.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/Granmade.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/Kaanch.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/Manav_rachna.png" height="100"
+                        width="250" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/HalwaiPop.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/up_to_trends.png" height="100"
+                        width="250" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/Kanpeki.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/sports.png" height="100" width="250"
+                        alt="" />
+                </div>
+                <div class="slide">
+                    <img src="https://folks-production.vercel.app/img/brand-logo/law_ministry.png" height="100"
+                        width="250" alt="" />
+                </div>
             </div>
         </div>
     </div>
+
 
 
 
