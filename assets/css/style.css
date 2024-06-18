@@ -14923,7 +14923,7 @@ span.select2-selection.select2-selection--single:focus {
   height: 100%;
   width: 100%;
   border-radius: 0px;
-  background: var(--title-color);
+  background: rgba(0, 0, 0, 0.306);
   mix-blend-mode: multiply;
   z-index: 0;
   opacity: 0;
