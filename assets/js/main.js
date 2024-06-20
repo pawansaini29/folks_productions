@@ -805,14 +805,14 @@
 
     // Active specifix
     $('.filter-active-cat1').imagesLoaded(function () {
-        var $filter = '.filter-active-cat1',
+        var $filter = '.filter-active-cat7',
         $filterItem = '.filter-item',
         $filterMenu = '.filter-menu-active';
 
         if ($($filter).length > 0) {
             var $grid = $($filter).isotope({
                 itemSelector: $filterItem,
-                filter: '.cat1',
+                filter: '.cat7',
                 masonry: {
                 // use outer width of grid-sizer for columnWidth
                 columnWidth: 1
