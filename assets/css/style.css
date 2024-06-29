@@ -107,6 +107,11 @@
 }
 
 /*------------------- 1.5. Typography -------------------*/
+
+.scroll-top .progress-circle path {
+  transition: none; /* Remove or adjust this transition */
+}
+
 html,
 body {
   scroll-behavior: smooth !important;
