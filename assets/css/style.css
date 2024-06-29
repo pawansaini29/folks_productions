@@ -111,11 +111,15 @@
 .scroll-top .progress-circle path {
   transition: none; /* Remove or adjust this transition */
 }
+html, body {
+  overscroll-behavior: none;
+}
 
-html,
+
+/* html,
 body {
   scroll-behavior: smooth !important;
-}
+} */
 
 body {
   font-family: var(--body-font);
