@@ -2820,7 +2820,7 @@ textarea.is-invalid {
   width: 45px;
 }
 
-/* .scroll-top {
+ .scroll-top {
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -2878,7 +2878,7 @@ textarea.is-invalid {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-} */
+} 
 
 /* Small devices */
 @media (max-width: 767px) {
