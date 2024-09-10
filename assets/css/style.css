@@ -3046,6 +3046,9 @@ textarea.is-invalid {
     font-size: 45px;
     line-height: 1.2;
   }
+  .contact-title{
+    font-size: 38px;
+  }
 
   .sec-text {
     margin-top: 0px;
@@ -3117,7 +3120,7 @@ textarea.is-invalid {
 
 /* Small devices */
 @media (max-width: 767px) {
-  .sec-title {
+  .sec-title,.contact-title {
     font-size: 34px;
   }
 
@@ -3134,7 +3137,7 @@ textarea.is-invalid {
 }
 
 @media (max-width: 390px) {
-  .sec-title {
+  .sec-title,.contact-title {
     font-size: 30px;
   }
 }
