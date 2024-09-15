@@ -56,7 +56,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    
+
     <!-- Email js -->
     <script src="assets/js/email.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -67,6 +67,17 @@
                 publicKey: "7gONJsUoFz4xqLgAF",
             });
         })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFDGQZBJBG">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TFDGQZBJBG');
     </script>
 
 </head>
@@ -574,8 +585,9 @@
         <div class="container-fluid p-0">
             <div class="contact-form-area space">
                 <div class="title-area text-center title-anim">
-                    <span class="sub-title style2 text-white">FEEL FREE TO CONTACT US WITH ANY QUESTIONS OR FOR FURTHER INFORMATION.</span>
-                    <h2 class="sec-title contact-title text-white" >WE CAN'T WAIT TO CONNECT WITH YOU!!</h2>
+                    <span class="sub-title style2 text-white">FEEL FREE TO CONTACT US WITH ANY QUESTIONS OR FOR FURTHER
+                        INFORMATION.</span>
+                    <h2 class="sec-title contact-title text-white">WE CAN'T WAIT TO CONNECT WITH YOU!!</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -604,7 +616,7 @@
                             </div>
 
                             <div class="form-btn col-12 text-center">
-                                <button type="submit" class="btn" onclick="sendMail()" >Submit</button>
+                                <button type="submit" class="btn" onclick="sendMail()">Submit</button>
                             </div>
                         </form>
                     </div>
