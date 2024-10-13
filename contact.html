@@ -69,17 +69,29 @@
     </script>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFDGQZBJBG">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFDGQZBJBG">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-TFDGQZBJBG');
-</script>
+        gtag('config', 'G-TFDGQZBJBG');
+    </script>
 
 </head>
+
+<style>
+    @media only screen and (max-width: 500px) {
+        .qr_code {
+            margin-bottom: 0px;
+            margin-top: -28px!important;
+        }
+        .qr_image{
+            height: 350px!important;
+        }
+    }
+</style>
 
 <body>
     <!--********************************
@@ -340,6 +352,29 @@
             </div>
         </div>
     </div>
+
+    <!--==============================
+        QR Instagram
+    ==============================-->
+
+    <div class="team-area-1 overflow-hidden">
+        <div class="container">
+            <div class="title-area text-center title-anim" style="margin-bottom: 0px;">
+                <span class="sub-title style2">Connect Us on</span>
+                <h2 class="sec-title">Instagram</h2>
+            </div>
+            <div class="row gy-4 justify-content-lg-between justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="team-card title-anim">
+                        <div class="team-card_img global-img qr_code " style="margin-bottom: 0px; margin-top: -65px;">
+                            <img src="./assets/img/folks_production.png" class="qr_image" style="height: 600px;" alt="Team Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--==============================
         Footer Area
