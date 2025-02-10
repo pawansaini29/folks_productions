@@ -772,10 +772,25 @@
 
        <!-- Visitors Count -->
        <script>
-        let visitCount = localStorage.getItem("visitCount") || 0;
-        visitCount = parseInt(visitCount) + 1;
-        localStorage.setItem("visitCount", visitCount);
-        document.getElementById("visit-count").textContent = visitCount;
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve visitor count array from localStorage or initialize it
+            let visitCounts = JSON.parse(localStorage.getItem("visitCounts")) || [];
+    
+            // Check if the array is empty (i.e., no previous visitors)
+            if (visitCounts.length === 0) {
+                // This is the first visitor, initialize count to 1
+                visitCounts.push(1);
+            } else {
+                // Increment the current visitor count
+                visitCounts[0] = visitCounts[0] + 1; // Increment first index
+            }
+    
+            // Update localStorage with the new visitor count array
+            localStorage.setItem("visitCounts", JSON.stringify(visitCounts));
+    
+            // Display the updated visitor count (first item in array)
+            document.getElementById("visit-count").textContent = visitCounts[0];
+        });
     </script>
 
         <!-- Jquery -->
