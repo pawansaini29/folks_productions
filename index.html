@@ -80,6 +80,8 @@
         gtag('config', 'G-TFDGQZBJBG');
     </script>
 
+    
+
 </head>
 
 <body>
@@ -735,6 +737,7 @@
                     </div>
                 </div>
             </div>
+         
             <div class="copyright-wrap text-center">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -742,6 +745,9 @@
                             <p class="copyright-text">© 2024 </p>
                             <p class="copyright-text"><a href="javascript:void(0)">Folks Production</a> All Rights
                                 Reserved.</p>
+                            <p class="copyright-text">
+                                Visitors: <span id="visit-count">0</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -763,6 +769,15 @@
         <!--==============================
     All Js File
     ============================== -->
+
+       <!-- Visitors Count -->
+       <script>
+        let visitCount = localStorage.getItem("visitCount") || 0;
+        visitCount = parseInt(visitCount) + 1;
+        localStorage.setItem("visitCount", visitCount);
+        document.getElementById("visit-count").textContent = visitCount;
+    </script>
+
         <!-- Jquery -->
         <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
         <!-- Slick Slider -->
