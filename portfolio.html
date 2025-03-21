@@ -65,7 +65,30 @@
         gtag('js', new Date());
 
         gtag('config', 'G-TFDGQZBJBG');
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const lazyImages = document.querySelectorAll("img.lazy-img");
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src; // Assign `data-src` to `src`
+                        img.removeAttribute("data-src"); // Remove `data-src`
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => observer.observe(img));
+        });
+
+
+
+
     </script>
+
 
 </head>
 
@@ -264,6 +287,26 @@
                     .portfolio-thumb.fade_left {
                         opacity: 1 !important;
                     }
+
+                    .portfolio-thumb {
+                        overflow: visible !important;
+                        /* Allow lazy images to load */
+                    }
+
+                    .lazy-container {
+                        height: auto !important;
+                        min-height: 560px !important;
+                    }
+
+                    .lazy-img {
+                        width: 100% !important;
+                        height: auto !important;
+                        min-height: 100% !important;
+                        /* Reserve space before loading */
+                        object-fit: cover !important;
+                        display: block !important;
+                        background: url('assets/img/placeholder.jpg') center center / cover no-repeat !important;
+                    }
                 </style>
 
                 <!-- FASHION SHOOTS -->
@@ -271,294 +314,420 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/39.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/39.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/39.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/62.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/62.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/62.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/65.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/65.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/65.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/33.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/33.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/33.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/45.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/45.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/45.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/61.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/61.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/61.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/21.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/21.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/21.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/54.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/54.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/54.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/2.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/2.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/2.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/3.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/4.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/4.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/4.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/5.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/5.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/5.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/6.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/6.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/6.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/7.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/7.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/7.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/8.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/8.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/8.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/9.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/9.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/9.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/11.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/11.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/11.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/12.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/13.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/14.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/16.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/16.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/16.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/17.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/17.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/17.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/28.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/28.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/28.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/29.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/29.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/29.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/31.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/31.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/31.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/35.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/35.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/35.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/47.1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/47.1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/47.1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/47.2.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/47.2.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/47.2.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/47.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/47.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/47.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/48.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/48.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/48.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/49.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/49.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/49.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/50.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/50.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/50.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/51.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/51.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/51.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/53.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/53.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/53.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/58.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/58.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/58.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/59.1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/59.1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/59.1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat1">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/fashion/59.1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/fashion/59.1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/fashion/59.1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
@@ -574,7 +743,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/3.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -582,7 +754,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/4.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/4.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/4.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -590,7 +765,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/5.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/5.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/5.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -598,7 +776,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/6.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/6.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/6.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -606,7 +787,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/7.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/7.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/7.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -614,7 +798,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/8.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/8.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/8.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -622,7 +809,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/9.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/9.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/9.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -630,7 +820,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/10.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -638,7 +831,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/11.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/11.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/11.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -646,7 +842,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/12.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -654,7 +853,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/13.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -662,7 +864,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/14.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -670,7 +875,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/15.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -678,7 +886,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/16.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/16.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/16.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -686,7 +897,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/17.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/17.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/17.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -694,7 +908,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/18.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/18.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/18.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -702,7 +919,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/19.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/19.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/19.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -710,7 +930,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/20.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/20.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/20.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -718,7 +941,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/21.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/21.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/21.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -726,7 +952,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/22.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/22.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/22.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -734,7 +963,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/23.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/23.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/23.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -742,7 +974,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/24.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/24.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/24.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -750,7 +985,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/25.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/25.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/25.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -758,7 +996,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/26.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/26.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/26.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -766,7 +1007,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/27.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/27.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/27.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -774,7 +1018,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/28.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/28.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/28.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -782,7 +1029,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/29.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/29.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/29.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -790,7 +1040,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/30.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/30.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/30.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -798,7 +1051,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/31.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/31.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/31.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -806,7 +1062,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/32.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/32.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/32.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -814,7 +1073,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/33.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/33.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/33.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -822,7 +1084,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/34.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/34.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/34.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -830,7 +1095,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/35.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/35.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/35.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -838,7 +1106,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/36.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/36.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/36.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -846,7 +1117,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/37.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/37.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/37.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -854,7 +1128,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/38.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/38.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/38.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -862,7 +1139,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/39.1.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/39.1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/39.1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -870,7 +1150,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/39.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/39.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/39.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -878,7 +1161,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/40.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/40.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/40.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -886,7 +1172,10 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Product/42.jpg">
                             <i class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Product/42.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Product/42.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
 
                 </div>
@@ -900,77 +1189,110 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/2.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/2.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/2.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/3.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/12.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/13.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/14.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/17.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/17.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/17.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/19.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/19.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/19.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat3">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/food/23.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/food/23.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/food/23.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
@@ -982,133 +1304,190 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/3.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/4.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/4.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/4.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/5.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/5.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/5.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/6.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/6.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/6.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/7.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/7.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/7.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/9.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/9.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/9.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/11.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/11.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/11.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/12.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/13.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/14.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/16.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/16.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/16.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/17.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/17.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/17.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/18.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/18.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/18.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/21.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/21.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/21.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/24.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/24.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/24.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat5">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/wedding/25.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/wedding/25.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/wedding/25.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
@@ -1119,112 +1498,160 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/2.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/2.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/2.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/3.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/4.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/4.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/4.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/5.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/5.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/5.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/6.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/6.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/6.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/7.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/7.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/7.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/8.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/8.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/8.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/9.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/9.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/9.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/11.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/11.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/11.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/12.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/13.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/14.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat6">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/Portrait/16.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/Portrait/16.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/Portrait/16.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
@@ -1237,161 +1664,230 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/1.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/1.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/1.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/2.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/2.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/2.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/18.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/18.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/18.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/5.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/5.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/5.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/6.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/6.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/6.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/7.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/7.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/7.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/8.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/8.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/8.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/9.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/9.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/9.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/10.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/10.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/10.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/11.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/11.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/11.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/12.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/12.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/12.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/13.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/13.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/13.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/14.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/14.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/14.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/15.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/15.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/15.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/16.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/16.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/16.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/17.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/17.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/17.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/3.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/3.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/3.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/19.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/19.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/19.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/20.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/20.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/20.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/21.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/21.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/21.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/22.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/22.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/22.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/23.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/23.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/23.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat7">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/travel/24.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/travel/24.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/travel/24.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
@@ -1403,14 +1899,20 @@
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/ecom/IMG_9733.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/ecom/IMG_9733.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/ecom/IMG_9733.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 filter-item cat8">
                     <div class="portfolio-thumb fade_left">
                         <a class="popup-image icon-btn" href="assets/img/portfolio/ecom/IMG_9757.jpg"><i
                                 class="far fa-eye"></i></a>
-                        <img src="assets/img/portfolio/ecom/IMG_9757.jpg" alt="folks production" loading="lazy">
+                        <div class="lazy-container">
+                            <img data-src="assets/img/portfolio/ecom/IMG_9757.jpg" alt="folks production" loading="lazy"
+                                class="lazy-img">
+                        </div>
                     </div>
                 </div>
 
